@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		</style>
+	</head>
+	<body style="height:1000px">
+		用户名：<input id="username" type="text" /><br/>
+		密  码：<input id="usernpass" type="text" /><br/>
+		<input id="btnLogin" type="button" value="登录" />
+		<input id="chk" type="checkbox"  />7天免登录
+	</body>
+</html>
+<script type="text/javascript">
+
+//path: path属性指定的是当前保存的cookie可以被哪些路径下的网页访问
+//      不指定path属性时，保存的cookie会被当前路径下的网页访问，以及当前路径下的子路径的网页访问。
+
+function $(id){
+	return document.getElementById(id);
+}
+
+window.onload = function(){
+	$("btnLogin").onclick = function(){
+		// 保存cookie
+		if($(chk).value==true){
+			var d= new Date();
+			d.setDate(d.getDate()+7);
+			document.cookie="username="+$("username").value";=expires"+d.GMTString();
+			alert(document.cookie);
+		}
+		// location.href="index.html";
+}
+</script>
