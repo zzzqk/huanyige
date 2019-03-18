@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>	
+		<input type="button" value="点名" onclick="testf()" />	
+	
+	</body>
+</html>
+<script type="text/javascript">
+	function testf(){
+		var arr=[13,34,56,87,89,34];
+		var t=arr.indexOf(34);
+		var k=arr.lastIndexOf(34);
+		alert(k);
+		alert(t);
+
+		arr.forEach(alert);
+
+		var arr2=arr.map(arrsqr);
+		function arrsqr(num){
+			return num*num;
+		}
+		alert(arr2);
+	}
+
+
+
+</script>
